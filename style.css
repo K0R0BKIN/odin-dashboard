@@ -5,6 +5,8 @@
   --color-border: hsl(0, 0%, 80%);
   --color-icon: hsl(0, 0%, 50%);
   --color-text-primary: hsl(0, 0%, 20%);
+  --color-text-secondary: var(--color-icon);
+  --size-button: 32px;
   --size-icon: 20px;
   --border-radius: 6px;
 }
@@ -25,9 +27,36 @@ body {
   height: 100vh;
   font-family: system-ui, sans-serif;
   color: var(--color-text-primary);
+
+  li {
+    list-style: none;
+  }
+
+  img,
+  svg {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .icon {
+    height: var(--size-icon);
+    width: var(--size-icon);
+  }
+
+  .profile-picture {
+    border-radius: 50%;
+  }
+
+  a {
+    color: var(--color-text-primary);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
-header {
+body > header {
   grid-area: header;
   background-color: var(--color-background-secondary);
   border-bottom: 1px solid var(--color-border);
@@ -41,6 +70,23 @@ header {
     font-size: 15px;
     font-weight: 600;
   }
+
+  #search-button {
+    padding: 8px 12px;
+    width: calc(128px * 2);
+    justify-content: flex-start;
+    display: flex;
+    gap: 6px;
+    svg {
+      --size-icon: 16px;
+      height: var(--size-icon);
+      width: var(--size-icon);
+    }
+  }
+
+  #profile-button {
+    border: none;
+  }
 }
 
 .button {
@@ -50,44 +96,61 @@ header {
   cursor: pointer;
   padding: 0;
   border-radius: var(--border-radius);
-  height: 32px;
-  width: 32px;
+  height: var(--size-button);
+  width: var(--size-button);
   display: flex;
   align-items: center;
   justify-content: center;
 
-  svg {
-    height: var(--size-icon);
-    width: var(--size-icon);
-  }
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
-
   &:hover {
     background-color: var(--color-background-tertiary);
   }
+}
 
-  &#search-button {
-    padding: 8px 12px;
-    width: calc(128px * 2);
-    justify-content: flex-start;
+main {
+  grid-area: main;
+  background-color: var(--color-background-primary);
+  display: grid;
+  grid-template-columns: 1fr 356px;
+  padding: 16px;
+
+  section {
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
     display: flex;
-    gap: 6px;
-    /* margin-right: auto; */
+    flex-direction: column;
+    gap: 12px;
+    height: fit-content;
 
-    svg {
-      --size-icon: 16px;
-      height: var(--size-icon);
-      width: var(--size-icon);
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+    }
     }
   }
 
-  &#profile-button {
-    border: none;
+  #updates {
+    grid-column: 2;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    gap: 8px;
+    }
+
+    time {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      display: block;
+    }
+
+    a {
+      font-size: 14px;
   }
 }
 
+      }
+    }
+  }
 }
