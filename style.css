@@ -1,3 +1,14 @@
+:root {
+  --color-background-primary: hsl(0, 0%, 100%);
+  --color-background-secondary: hsl(0, 0%, 99%);
+  --color-background-tertiary: hsl(0, 0%, 97%);
+  --color-border: hsl(0, 0%, 80%);
+  --color-icon: hsl(0, 0%, 50%);
+  --color-text-primary: hsl(0, 0%, 20%);
+  --size-icon: 20px;
+  --border-radius: 6px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,4 +18,76 @@
 body {
   line-height: 1.5;
   margin: 0;
+  display: grid;
+  grid-template:
+    "header header" 64px
+    "main main" 1fr;
+  height: 100vh;
+  font-family: system-ui, sans-serif;
+  color: var(--color-text-primary);
+}
+
+header {
+  grid-area: header;
+  background-color: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  gap: 12px;
+
+  h1 {
+    margin-right: auto;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+.button {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-icon);
+  cursor: pointer;
+  padding: 0;
+  border-radius: var(--border-radius);
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    height: var(--size-icon);
+    width: var(--size-icon);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+  &:hover {
+    background-color: var(--color-background-tertiary);
+  }
+
+  &#search-button {
+    padding: 8px 12px;
+    width: calc(128px * 2);
+    justify-content: flex-start;
+    display: flex;
+    gap: 6px;
+    /* margin-right: auto; */
+
+    svg {
+      --size-icon: 16px;
+      height: var(--size-icon);
+      width: var(--size-icon);
+    }
+  }
+
+  &#profile-button {
+    border: none;
+  }
+}
+
 }
