@@ -21,12 +21,12 @@ body {
   line-height: 1.5;
   margin: 0;
   display: grid;
-  grid-template:
-    "header header" 64px
-    "main main" 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 256px 1fr;
   height: 100vh;
   font-family: system-ui, sans-serif;
   color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
 
   li {
     list-style: none;
@@ -50,6 +50,7 @@ body {
   a {
     color: var(--color-text-primary);
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
@@ -75,12 +76,12 @@ body {
 }
 
 body > header {
-  grid-area: header;
+  grid-column: 1 / -1;
   background-color: var(--color-background-secondary);
   border-bottom: 1px solid var(--color-border);
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 16px;
   gap: 12px;
 
   h1 {
@@ -95,6 +96,7 @@ body > header {
     justify-content: flex-start;
     display: flex;
     gap: 6px;
+
     svg {
       --size-icon: 16px;
       height: var(--size-icon);
@@ -107,31 +109,27 @@ body > header {
   }
 }
 
-.button {
-  background-color: transparent;
-  border: 1px solid var(--color-border);
-  color: var(--color-icon);
-  cursor: pointer;
-  padding: 0;
-  border-radius: var(--border-radius);
-  height: var(--size-button);
-  width: var(--size-button);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    background-color: var(--color-background-tertiary);
-  }
+body > aside {
+  grid-column: 1;
 }
 
-main {
-  grid-area: main;
-  background-color: var(--color-background-primary);
-  display: grid;
-  grid-template-columns: 1fr 356px;
+body > div {
+  grid-column: 2;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
   padding: 16px;
-  grid-auto-rows: min-content;
+}
+
+body > div > main {
+  flex-basis: 856px;
+}
+
+body > div > aside {
+  width: 356px;
+  flex: none;
+  display: flex;
+  flex-direction: column;
   gap: 16px;
 
   section {
@@ -252,9 +250,11 @@ main {
     .go-language-accent-color {
       fill: #00add8;
     }
+
     .adblock-filter-list-language-accent-color {
       fill: #800000;
     }
+
     .javascript-language-accent-color {
       fill: #f1e05a;
     }
