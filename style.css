@@ -54,6 +54,24 @@ body {
       text-decoration: underline;
     }
   }
+
+  .button {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-icon);
+    cursor: pointer;
+    padding: 0;
+    border-radius: var(--border-radius);
+    height: var(--size-button);
+    width: var(--size-button);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: var(--color-background-tertiary);
+    }
+  }
 }
 
 body > header {
@@ -232,13 +250,13 @@ main {
 
   .repo-primary-language {
     .go-language-accent-color {
-      fill: #00ADD8;
+      fill: #00add8;
     }
     .adblock-filter-list-language-accent-color {
       fill: #800000;
     }
     .javascript-language-accent-color {
-      fill: #F1E05A;
+      fill: #f1e05a;
     }
   }
 }
