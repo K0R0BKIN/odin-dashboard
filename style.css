@@ -149,6 +149,37 @@ body > header {
 
 body > aside {
   grid-column: 1;
+  width: calc(128px * 2.5);
+  position: relative;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .profile-picture {
+    border-radius: 4px;
+  }
+
+  .repo-name {
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  & ::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--color-border);
+  }
+
+  #recent-repos {
+    border: none;
+  }
 }
 
 body > div {
@@ -218,8 +249,8 @@ body > div > aside {
   height: fit-content;
   display: flex;
 
-    .repo-name {
-      font-weight: 500;
+  .repo-name {
+    font-weight: 500;
   }
 
   .button {
