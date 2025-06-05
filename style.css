@@ -44,7 +44,35 @@ body {
   }
 
   .profile-picture {
+    height: var(--size-icon);
     border-radius: 50%;
+  }
+
+  .repo-link {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .repo-name {
+    font-size: 14px;
+  }
+
+  section {
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    height: fit-content;
+
+    h3 {
+      font-size: 14px;
+      font-weight: 600;
+    }
   }
 
   a {
@@ -141,21 +169,6 @@ body > div > aside {
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  section {
-    padding: 16px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    height: fit-content;
-
-    h3 {
-      font-size: 14px;
-      font-weight: 600;
-    }
-  }
 }
 
 #updates {
@@ -205,21 +218,8 @@ body > div > aside {
   height: fit-content;
   display: flex;
 
-  .repo-title {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 4px;
-
-    .profile-picture {
-      height: var(--size-icon);
-    }
-
     .repo-name {
-      font-size: 14px;
       font-weight: 500;
-    }
   }
 
   .button {
