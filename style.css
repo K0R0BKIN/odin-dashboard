@@ -136,8 +136,8 @@ body > div > main {
 }
 
 body > div > aside {
-  width: 356px;
   flex: none;
+  flex-basis: 356px;
   display: flex;
   flex-direction: column;
   gap: 16px;
