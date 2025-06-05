@@ -154,6 +154,10 @@ body > aside {
   grid-column: 1;
   width: calc(128px * 2.5);
   position: relative;
+}
+
+#recent-repos {
+  border: none;
 
   ul {
     display: flex;
@@ -178,10 +182,6 @@ body > aside {
     height: 100%;
     width: 1px;
     background-color: var(--color-border);
-  }
-
-  #recent-repos {
-    border: none;
   }
 }
 
