@@ -139,7 +139,7 @@ body > header {
     }
   }
 
-  & ::after {
+  &::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -154,6 +154,16 @@ body > aside {
   grid-column: 1;
   width: calc(128px * 2.5);
   position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--color-border);
+  }
 }
 
 #recent-repos {
@@ -186,16 +196,6 @@ body > aside {
       background-color: initial;
       text-decoration: underline;
     }
-  }
-
-  & ::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 1px;
-    background-color: var(--color-border);
   }
 }
 
