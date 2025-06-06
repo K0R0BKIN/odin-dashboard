@@ -118,11 +118,12 @@ body > header {
   }
 
   #search-button {
-    padding: 8px 12px;
+    padding-inline: 12px;
     width: calc(128px * 2);
     justify-content: flex-start;
     display: flex;
     gap: 6px;
+    font-size: 14px;
 
     svg {
       --size-icon: 16px;
