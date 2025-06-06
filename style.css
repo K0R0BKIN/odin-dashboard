@@ -100,6 +100,10 @@ body {
       background-color: var(--color-background-tertiary);
     }
   }
+
+  h2 {
+    font-size: 24px;
+  }
 }
 
 body > header {
@@ -210,6 +214,9 @@ body > div {
 
 body > div > main {
   flex-basis: 856px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 body > div > aside {
