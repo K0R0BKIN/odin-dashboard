@@ -270,10 +270,6 @@ body > div > aside {
   .repo-name {
     font-weight: 500;
   }
-
-  .button {
-    display: none;
-  }
 }
 
 #explore p {
