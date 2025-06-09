@@ -1,0 +1,160 @@
+/* Variables */
+
+:root {
+
+  /* Color */
+
+  --color-background-primary: hsl(0, 0%, 100%);
+  --color-background-secondary: hsl(0, 0%, 98%);
+  --color-background-tertiary: hsl(0, 0%, 95%);
+
+  --color-text-primary: hsl(0, 0%, 0%);
+  --color-text-secondary: hsl(0, 0%, 40%);
+  --color-text-tertiary: hsl(0, 0%, 80%);
+
+  --color-icon: var(--color-text-secondary);
+
+  --color-border: var(--color-text-tertiary);
+
+  /* Typography */
+
+  --text-sm: 12px;
+  --text-base: 15px;
+  --text-lg: 20px;
+
+  --icon-xs: var(--text-sm);
+  --icon-md: var(--text-lg);
+
+  /* Radius */
+
+  --radius-sm: 6px;
+  --radius-full: 50%;
+
+  /* Space */
+
+  --space-xxs: 4px;
+  --space-xs: 6px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  /* Border */
+
+  --border-regular: 1px solid var(--color-border);
+
+  /* Components */
+
+  --button-size: 32px;
+}
+
+/* Resets */
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  border: none;
+}
+
+/* Components */
+
+.button {
+  height: var(--button-size);
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  padding: var(--space-xs);
+
+  background-color: transparent;
+  color: var(--color-icon);
+
+  outline: var(--border-regular);
+  border-radius: var(--radius-sm);
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-background-tertiary);
+  }
+}
+
+.text-button {
+  font-weight: 500;
+  color: var(--color-text-primary);
+  outline: none;
+}
+
+.icon, .pfp {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.pfp {
+  height: var(--button-size);
+  padding: 0;
+  outline: none;
+  border-radius: var(--radius-full);
+}
+
+/*  Main shit */
+
+body {
+  min-height: 100vh;
+
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+
+  font-size: var(--text-base);
+
+  display: grid;
+}
+
+#header {
+  grid-column: 1 / -1;
+
+  height: var(--space-xl);
+
+  padding: var(--space-md);
+
+  background-color: var(--color-background-secondary);
+
+  outline: var(--border-regular);
+}
+
+#header .separator {
+  width: 1px;
+  height: var(--space-md);
+  
+  background-color: var(--color-border);
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+#header-title {
+  margin-right: auto;
+
+  gap: var(--space-xs);
+}
+
+#header-search #search-button {
+  width: 256px;
+}
+
+.icon.small {
+  height: var(--icon-xs);
+  stroke-width: 2;
+}
