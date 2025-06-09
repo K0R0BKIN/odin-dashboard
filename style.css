@@ -121,18 +121,22 @@ body {
   font-size: var(--text-base);
 
   display: grid;
+  grid-template-rows: var(--surface-md) 1fr;
+  grid-template-columns: var(--surface-lg) 1fr;
+  grid-template-areas:
+  "header header"
+  "user-activity home";
 }
 
 #header {
-  grid-column: 1 / -1;
-
-  height: var(--space-xl);
+  grid-area: header;
 
   padding: var(--space-md);
 
   background-color: var(--color-background-secondary);
 
   outline: var(--border-regular);
+  z-index: 1;
 }
 
 #header .separator {
@@ -159,6 +163,11 @@ body {
 }
 
 .icon.small {
-  height: var(--icon-xs);
+  height: var(--icon-sm);
   stroke-width: 2;
+}
+
+#user-activity {
+  grid-area: user-activity;
+  outline: var(--border-regular);
 }
