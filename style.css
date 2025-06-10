@@ -1,7 +1,6 @@
 /* Variables */
 
 :root {
-
   /* Color */
 
   --color-background-primary: hsl(0, 0%, 100%);
@@ -21,6 +20,9 @@
   --text-sm: 12px;
   --text-base: 15px;
   --text-lg: 20px;
+
+  --text-normal: normal;
+  --text-title: 500;
 
   /* Radius */
 
@@ -54,6 +56,11 @@
 
 /* Resets */
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   padding: 0;
   margin: 0;
@@ -65,9 +72,24 @@ li {
 
 button {
   border: none;
+  background-color: transparent;
+}
+
+img,
+svg {
+  height: 100%;
 }
 
 /* Components */
+
+.icon {
+  aspect-ratio: 1 / 1;
+  color: var(--color-icon);
+}
+
+.pfp {
+  border-radius: var(--radius-full);
+}
 
 .button {
   height: var(--button-md);
@@ -79,35 +101,23 @@ button {
 
   padding: var(--space-xs);
 
-  background-color: transparent;
-  color: var(--color-icon);
-
   outline: var(--border-regular);
   border-radius: var(--radius-sm);
 
   cursor: pointer;
 
+  &.title {
+    outline: 0;
+  }
+
+  &:has(.pfp) {
+    padding: 0;
+    outline: none;
+  }
+
   &:hover {
     background-color: var(--color-background-tertiary);
   }
-}
-
-.text-button {
-  font-weight: 500;
-  color: var(--color-text-primary);
-  outline: none;
-}
-
-.icon, .pfp {
-  height: 100%;
-  aspect-ratio: 1 / 1;
-}
-
-.pfp {
-  height: var(--button-md);
-  padding: 0;
-  outline: none;
-  border-radius: var(--radius-full);
 }
 
 /*  Main shit */
@@ -124,12 +134,16 @@ body {
   grid-template-rows: var(--surface-md) 1fr;
   grid-template-columns: var(--surface-lg) 1fr;
   grid-template-areas:
-  "header header"
-  "user-activity home";
+    "header header"
+    "user-activity home";
 }
 
 #header {
   grid-area: header;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
 
   padding: var(--space-md);
 
@@ -139,23 +153,33 @@ body {
   z-index: 1;
 }
 
-#header .separator {
-  width: 1px;
-  height: var(--space-md);
-  
-  background-color: var(--color-border);
-}
-
-.button-group {
+#header :has(.button) {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+
+  &#header-title {
+    gap: var(--space-xs);
+  }
+}
+
+#header .separator {
+  width: 1px;
+  height: var(--space-md);
+
+  background-color: var(--color-border);
 }
 
 #header-title {
   margin-right: auto;
+}
 
-  gap: var(--space-xs);
+#header-title #page-title {
+  font-size: var(--text-base);
+  font-weight: var(--text-title);
+
+  outline: none;
+  color: inherit;
 }
 
 #header-search #search-button {

@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="button-group" id="header">
-      <div class="button-group" id="header-title">
+    <header id="header">
+      <div id="header-title">
         <button class="button" id="sidebar-button">
           <svg
             class="icon"
@@ -30,9 +30,9 @@
             />
           </svg>
         </button>
-        <a class="button text-button" id="page-title">Dashboard</a>
+        <h1 class="title button" id="page-title">Dashboard</>
       </div>
-      <div class="button-group" id="header-search">
+      <div id="header-search">
         <button class="button field" id="search-button">
           <svg
             class="icon"
@@ -54,7 +54,7 @@
       </div>
       <div class="separator" role="presentation"></div>
       <nav id="header-navigation">
-        <ul class="button-group">
+        <ul>
           <li>
             <a class="button dropdown" id="create-button" href="#">
               <svg
@@ -111,13 +111,17 @@
             </a>
           </li>
           <li>
-            <a class="button pfp" id="profile-button" href="#">
-              <img class="icon" src="/images/nikita_pfp.png" alt="" />
+            <a class="button" id="profile-button" href="#">
+              <img class="icon pfp" src="/images/nikita_pfp.png" alt="" />
             </a>
           </li>
         </ul>
       </nav>
     </header>
-    <aside id="user-activity"></aside>
+    <aside id="user-activity">
+      <section>
+        <h3 class="title">Recent repositories</h3>
+      </section>
+    </aside>
   </body>
 </html>
