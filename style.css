@@ -25,8 +25,9 @@
   --text-base: 15px;
   --text-lg: 20px;
 
-  --text-normal: normal;
-  --text-title: 500;
+  --text-normal: 400;
+  --text-bold: 500;
+  --text-title: 600;
 
   /* Radius */
 
@@ -120,6 +121,7 @@ h3 {
 
   color: var(--color-text-secondary);
   font-size: var(--text-sm);
+  font-weight: var(--text-normal);
 
   padding: var(--space-xs);
 
@@ -148,7 +150,7 @@ h3 {
     outline: none;
     background-color: var(--color-accent-primary);
     color: var(--color-white);
-    font-weight: var(--text-title);
+    font-weight: var(--text-bold);
 
     &:hover {
       background-color: var(--color-accent-secondary);
