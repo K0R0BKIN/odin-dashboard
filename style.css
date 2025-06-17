@@ -45,6 +45,7 @@
   --icon-sm: var(--text-xs);
   --icon-md: var(--text-lg);
 
+  --button-sm: 28px;
   --button-md: 32px;
 
   --surface-md: 64px;
@@ -132,7 +133,7 @@ h3 {
   }
 
   &.small {
-    height: 28px;
+    height: var(--button-sm);
     font-size: var(--text-xs);
     gap: var(--space-xxs);
     padding-inline: 8px;
