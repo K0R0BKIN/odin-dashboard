@@ -21,7 +21,7 @@
   /* Typography */
 
   --text-xs: 12px;
-  --text-sm: 13px;
+  --text-sm: 14px;
   --text-base: 15px;
   --text-lg: 20px;
 
@@ -84,6 +84,10 @@ svg {
 
 a {
   color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 /* Components */
@@ -171,6 +175,18 @@ h3 {
   }
 }
 
+.repo-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+
+  font-size: var(--text-sm);
+  font-weight: var(--text-normal);
+  height: 1lh;
+
+  text-decoration: none;
+}
+
 /*  Main shit */
 
 body {
@@ -180,6 +196,7 @@ body {
   color: var(--color-text-primary);
 
   font-size: var(--text-base);
+  line-height: 1.5;
 
   display: grid;
   grid-template-rows: var(--surface-md) 1fr;
@@ -242,8 +259,13 @@ body > * {
 
 #recent-repos header {
   align-items: center;
+  margin-bottom: var(--space-sm);
 }
 
 #recent-repos .title {
   margin-right: auto;
+}
+
+#recent-repos .repo-link {
+  margin-bottom: var(--space-sm);
 }
