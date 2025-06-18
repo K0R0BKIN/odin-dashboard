@@ -25,6 +25,7 @@
   --text-base: 15px;
   --text-lg: 20px;
 
+  --text-thin: 300;
   --text-normal: 400;
   --text-bold: 500;
   --text-title: 600;
@@ -36,8 +37,9 @@
 
   /* Size */
 
-  --space-xxs: 4px;
-  --space-xs: 6px;
+  --space-xxxs: 4px;
+  --space-xxs: 6px;
+  --space-xs: 8px;
   --space-sm: 12px;
   --space-md: 16px;
   --space-lg: 32px;
@@ -121,13 +123,13 @@ h3 {
 
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--space-xxs);
 
   color: var(--color-text-secondary);
   font-size: var(--text-sm);
   font-weight: var(--text-normal);
 
-  padding: var(--space-xs);
+  padding: var(--space-xxs);
 
   outline: var(--border-regular);
   border-radius: var(--radius-sm);
@@ -141,7 +143,7 @@ h3 {
   &.small {
     height: var(--button-sm);
     font-size: var(--text-xs);
-    gap: var(--space-xxs);
+    gap: var(--space-xxxs);
     padding-inline: 8px;
 
     & .icon {
@@ -182,7 +184,7 @@ h3 {
 .repo-link {
   display: flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: var(--space-xxs);
 
   font-size: var(--text-sm);
   font-weight: var(--text-normal);
@@ -238,7 +240,7 @@ body > * {
   gap: var(--space-sm);
 
   &#header-title {
-    gap: var(--space-xs);
+    gap: var(--space-xxs);
   }
 }
 
