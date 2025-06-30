@@ -11,11 +11,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header id="header"></header>
-    <aside id="user-activity"></aside>
+    <header id="header">
+      <div class="button-group" id="header-title"></div>
+      <div class="button-group" id="header-search"></div>
+      <div class="separator"></div>
+      <nav class="button-group" id="header-nav"></nav>
+    </header>
+    <aside class="sidebar widget-group" id="user-activity">
+      <section class="widget" id="recent-repos"></section>
+      <section class="widget" id="recent-activity"></section>
+    </aside>
     <div id="main">
-      <main id="feed"></main>
-      <aside id="announcements"></aside>
+      <main id="feed">
+        <header id="feed-header"></header>
+        <div id="feed-content">
+          <article class="card friend-update"></article>
+          <div class="card suggestion" id="trending-repo"></div>
+          <div class="card suggestion" id="recommended-repo"></div>
+          <article class="card friend-update"></article>
+          <article class="card friend-update"></article>
+          <div class="card suggestion" id="recommended-repo"></div>
+        </div>
+      </main>
+      <aside class="sidebar widget-group" id="announcements">
+        <section class="widget" id="changelog"></section>
+      </aside>
     </div>
   </body>
 </html>
