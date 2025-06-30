@@ -1,0 +1,31 @@
+:root {
+  --border-color: hsl(0, 0%, 90%);
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 64px 1fr;
+  grid-template-columns: 20rem 1fr;
+  grid-template-areas:
+    "header header"
+    "user-activity main";
+
+  background-color: hsl(0, 0%, 100%);
+}
+
+#header {
+  grid-area: header;
+  border-bottom: 1px solid var(--border-color);
+
+  background-color: hsl(0, 0%, 98%);
+}
+
+#user-activity {
+  grid-area: user-activity;
+  border-right: 1px solid var(--border-color);
+}
+
+#main {
+  grid-area: main;
+}
