@@ -1,7 +1,7 @@
 /* Variables */
 
 :root {
-  --text-primary: hsl(0, 0%, 20%);
+  --text-primary: hsl(0, 0%, 0%);
   --text-secondary: hsl(0, 0%, 40%);
 
   --background-primary: hsl(0, 0%, 100%);
@@ -58,6 +58,7 @@ li {
   border-radius: 6px;
 
   color: var(--text-secondary);
+  font-size: 14px;
 
   cursor: pointer;
 }
@@ -193,16 +194,12 @@ body {
     "header header"
     "user-activity main";
 
+  font-family: system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.5;
   color: var(--text-primary);
 
   background-color: var(--background-primary);
-}
-
-#user-activity,
-#main {
-  padding: 24px;
 }
 
 #header {
@@ -253,7 +250,14 @@ body {
 #user-activity {
   grid-area: user-activity;
 
+  padding: 16px;
+
   border-right: 1px solid var(--border-color);
+}
+
+#recent-repos {
+  position: sticky;
+  top: 16px;
 }
 
 #main {
@@ -262,6 +266,8 @@ body {
   display: flex;
   justify-content: center;
   gap: 32px;
+
+  padding: 48px;
 }
 
 #feed {
@@ -291,4 +297,9 @@ body {
   width: 15rem;
 
   flex-shrink: 0;
+}
+
+#changelog {
+  position: sticky;
+  top: 16px;
 }
