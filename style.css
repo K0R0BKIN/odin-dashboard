@@ -81,24 +81,29 @@ li {
 .widget {
   min-height: 15rem;
 
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
   font-size: 14px;
-
-  border: var(--border-placeholder);
 }
 
 .widget-title {
+  margin-bottom: 12px;
+
   font-size: inherit;
   font-weight: 600;
+}
+
+.widget footer .link {
+  display: inline-block;
+
+  margin-top: 12px;
+
+  font-size: 12px;
+  color: var(--text-secondary);
 }
 
 .link-group {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 8px;
 }
 
 .link {
@@ -112,9 +117,12 @@ li {
 }
 
 .card {
-  height: 10rem;
+  min-height: 10rem;
 
-  border: var(--border-placeholder);
+  padding: 16px;
+  border-radius: 6px;
+
+  border: var(--border-outline);
 }
 
 /* Elements */
@@ -130,6 +138,7 @@ body {
     "user-activity main";
 
   font-size: 15px;
+  line-height: 1.5;
   color: var(--text-primary);
 
   background-color: hsl(0, 0%, 100%);
@@ -191,21 +200,16 @@ body {
   border-right: 1px solid var(--border-color);
 }
 
-#recent-repos {
-  border: none;
-}
-
-#show-more-button {
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
 #main {
   grid-area: main;
 
   display: flex;
   justify-content: center;
   gap: 32px;
+}
+
+#changelog {
+  border: var(--border-outline);
 }
 
 #feed {
@@ -218,7 +222,7 @@ body {
 
 #feed-header {
   height: 3rem;
-  
+
   border: var(--border-placeholder);
 }
 
